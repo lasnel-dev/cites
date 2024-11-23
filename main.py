@@ -36,14 +36,17 @@ import sqlite3
 
 connection = sqlite3.connect("itstep_DB.sl3", 5)
 cur = connection.cursor()
+
+# cur.execute("CREATE TABLE Animals (name TEXT, type TEXT);")
+
 # Вставлення даних
-# cur.execute("INSERT INTO first_table (name) VALUES ('Anna');")
+# cur.execute("INSERT INTO Animals (name, type) VALUES ('Лев', 'Ссавець');")
 # cur.execute("INSERT INTO first_table (name) VALUES ('Kats');")
 # cur.execute("INSERT INTO first_table (name) VALUES ('John');")
 #
 # connection.commit()
 # Отримання даних із колонок rowid та name
-# cur.execute("SELECT rowid, name FROM first_table;")
+cur.execute("SELECT rowid, name, type FROM Animals;")
 # Отримання даних із колонок rowid та name по індексу 3
 # cur.execute("SELECT rowid, name FROM first_table WHERE rowid=3;")
 # Редагування значення по вказаному рядку та колонці
@@ -51,7 +54,7 @@ cur = connection.cursor()
 #Видалення конеретного елемента
 # cur.execute("DELETE FROM first_table WHERE rowid=4;")
 # Видалення таблиці
-# cur.execute("DROP TABLE first_table;")
+# cur.execute("DROP TABLE Animals;")
 
 connection.commit()
 
